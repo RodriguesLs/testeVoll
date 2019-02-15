@@ -20,23 +20,44 @@ Category.create!(
 
 Movie.create!(
     name: "Need for speed",
-    description: Faker::Lorem.sentence([5, 6, 7].sample),
+    description: Faker::Lorem.paragraphs,
     url: "https://www.youtube.com/watch?v=u3wtVI-aJuw",
     category: Category.all.sample,
     picture: File.new(Rails.root.join('public', 'images', "#{Random.rand(4)}.jpg"), 'r')
 )
 Movie.create!(
     name: "Batman",
-    description: Faker::Lorem.sentence([5, 6, 7].sample),
+    description: Faker::Lorem.paragraphs,
     url: "https://www.youtube.com/watch?v=u3wtVI-aJuw",
     category: Category.all.sample,
     picture: File.new(Rails.root.join('public', 'images', "#{Random.rand(4)}.jpg"), 'r')
 )
 Movie.create!(
     name: "Naruto",
-    description: Faker::Lorem.sentence([5, 6, 7].sample),
+    description: Faker::Lorem.paragraphs,
     url: "https://www.youtube.com/watch?v=u3wtVI-aJuw",
     category: Category.all.sample,
     picture: File.new(Rails.root.join('public', 'images', "#{Random.rand(4)}.jpg"), 'r')
 )
 
+Movie.create!(
+    name: "Need for speed",
+    description: Faker::Lorem.paragraphs,
+    url: "https://www.youtube.com/watch?v=u3wtVI-aJuw",
+    category: Category.all.sample,
+    picture: File.new(Rails.root.join('public', 'images', "#{Random.rand(4)}.jpg"), 'r')
+)
+Movie.create!(
+    name: "Batman",
+    description: Faker::Lorem.paragraphs,
+    url: "https://www.youtube.com/watch?v=u3wtVI-aJuw",
+    category: Category.all.sample,
+    picture: File.new(Rails.root.join('public', 'images', "#{Random.rand(4)}.jpg"), 'r')
+)
+Movie.create!(
+    name: "Naruto",
+    description: Faker::Lorem.paragraphs,
+    url: "https://www.youtube.com/watch?v=u3wtVI-aJuw",
+    category: Category.all.sample,
+    picture: File.new(Rails.root.join('public', 'images', "#{Random.rand(4)}.jpg"), 'r')
+)

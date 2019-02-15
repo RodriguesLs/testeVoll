@@ -1,31 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Movies</h1>
+<h1 class="h1-list">Listing Movies</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.name %></td>
-        <td><%= movie.description %></td>
-        <td><%= movie.category.name %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Movie', new_movie_path %>
+<div class="container">
+  <% @movies.each do |movie| %>
+    <div class="main-container row">
+      <h3 class="card-h3"><%= movie.name %></h3>
+      <div class="col-3">
+        <%= image_tag movie.picture(:thumb), class: "img-thumbnail"%>
+      </div>
+      <div class="main-desc col-3">
+        Classificação: <h4><%= movie.category.name%></h4>
+        <p><%= movie.description%> </p>
+      </div>
+      <div class="col-3 col-3-3">
+        <%= link_to 'Show', movie, class: "col-3-btn" %>
+        <%= link_to 'Edit', edit_movie_path(movie), class: "col-3-btn" %>
+        <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "col-3-btn" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="paginate">
+    <p><%= paginate @movies %></p>
+  </div>
+<div class="button paginate">
+  <%= link_to 'New Movie', new_movie_path %>
+</div>

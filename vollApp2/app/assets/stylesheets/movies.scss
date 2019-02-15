@@ -2,8 +2,199 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.h1-list {
+    text-align: center;
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 20%;
+}
+
+.container {
+    position: absolute;
+    height: auto;
+    width: 50%;
+    left: 27%;
+    margin-bottom: 10%;
+    box-sizing: border-box;
+    padding-bottom: 0;
+}
+
+.main-container {
+    border: 2px solid black;
+    border-radius: 30px 0 30px 0;
+    width: 95%;
+    height: 30%;
+    margin: 1em auto;
+    box-sizing: border-box;
+    position: relative;
+    overflow: auto;
+    box-shadow: 2px 2px 2px black;
+}
 
 .img-thumbnail {
+    margin: 10px;
+    display: inline-block;
+    float: left;
+    border-radius: 10px;
+}
+
+.main-desc {
+    padding: 30px 0;
+}
+
+.main-desc h4 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0;
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 15px 0 15px 0;
+}
+
+
+.card-h3 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    background-color: #ddd;
+    border-bottom: 1px solid #aaa;
+}
+
+.img-thumbnail {
+    display: inline-block;
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+.t-content {
+    border-collapse: collapse;
+    padding: 20px;
     display: block;
-    margin-top: 15px;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    height: 400px;
+    background-color: #49d9f9;
+}
+
+.t-content thead {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.t-content th {
+    display: inline-block;
+    margin: 0;
+}
+
+.t-content th:nth-child(2) {
+    display: inline-block;
+    margin-left: 90px;
+    
+}
+
+
+.t-content tr:nth-child(2n) {
+    background-color: #ddd;
+}
+
+.table-container {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+}
+
+
+
+.t-content td:nth-child(2) {
+    display: inline-block;
+    margin: 0 40px;
+}
+
+.paginate {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.paginate a {
+    text-decoration: none;
+}
+
+.paginate a:hover {
+    background-color: transparent;
+    color: red;
+}
+
+// grid
+
+.row {
+    overflow: auto;
+}
+
+.col-3 {
+    width: 33%;
+    float: left;
+    height: 20%;
+}
+
+.col-3-3 {
+    margin-top: 5%;
+    text-align: right;
+    
+}
+
+.col-3-btn{
+    margin-top: 20px;
+    background-color: #ddd;
+    border-radius: 15px 0 0 15px;
+    height: 30px;
+    display: block;
+    padding-right: 20px;
+    padding-top: 5px;
+}
+
+.col-3 a{
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.2s linear;
+}
+.col-3-btn:hover {
+    color: black;
+    background-color: blue;
+}
+.col-3 a:visited{
+    background-color: #ccc;
+}
+
+
+.button {
+    height: 50px;
+    padding: 0;
+    font-size: 16px;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: blue;
+    transition: background-color 0.2s linear, color 0.2s linear;
+    display: block;
+}
+
+.button:hover {
+    background-color: #00008B;
+}
+.button a {
+    display: block;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.button a:visited {
+    color: white;
+}
+.button a:hover {
+    color: #ddd;
 }
