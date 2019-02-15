@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Films</h1>
+
+<!------ Include the above in your HEAD tag ---------->
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+
+<header class="navbar">
+    <p class="btn-new"><%= link_to 'New Filme', new_filme_path %></p>
+</header>
+
+<main class="container">
+<section class="movies" id="movies">
+    <h2>Featured Movies</h2>
+	<div class="row">
+		<div class="col-lg-3 col-md-4 col-sm-6">
+
+
+<% @filmes.each do |filme| %>
+			<article class="card">
+				<header>
+					<h3 class="myh3"><%= filme.nome %></h3>
+				</header>
+				<div class="card-block">
+					<div class="img-card">
+						<img src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Series/36053/36053._SX360_QL80_TTD_.jpg" alt="Movie" class="w-100" />
+					</div>
+				<p class="tagline card-text text-xs-center"><%= filme.descricao %></p>
+				<%= link_to 'Show', filme, class: "btn btn-primary btn-block" %>
+     		   	<%= link_to 'Edit', edit_filme_path(filme), class: "btn btn-primary btn-block" %>
+        		<%= link_to 'Destroy', filme, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-block" %>
+				</div>
+			</article>
+<%end%>
+		</div>
+</section>
+	
+	
