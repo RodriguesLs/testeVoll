@@ -1,0 +1,116 @@
+/*
+     *= require bootstrap
+*/
+html {
+    background-color: white;
+}
+
+body {
+    padding: 10px;
+    margin: 0;
+    height: 100%;
+}
+
+.field {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border: 2px solid transparent;
+    
+}
+
+.cover {
+    text-align: center;
+}
+
+.row {
+    position:relative;
+}
+
+.col-2 {
+    float: left;
+    width: 25%;
+}
+
+.field input[type="text"]{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding:0;
+    margin:0;
+    margin-top: 7px;
+    border: 0;
+}
+
+.field-title {
+    left: 0;
+    font-size: 33px;
+    color: red;
+    text-transform: capitalize;
+}
+
+.lbl {
+    display: inline-block;
+    position:absolute;
+    border-radius: 10px;
+    padding: 6px;
+    transition: color 0.2s linear;
+    color: gray;
+}
+
+p{
+    display: inline-block;
+    position: absolute;
+    right: 20%;
+}
+
+a {
+    
+    text-decoration: none;
+}
+
+a:hover {
+    color:red;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.field label:hover {
+    
+    color: red;
+    
+}
+
+.field-desc {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
+
+.field-desc:nth-child(3) {
+    margin-bottom: 30px;
+    color: red;
+}
+
+.ex-btn {
+    clear: left;
+    position: absolute;
+    left: 25%;
+    top: 80%;
+}
+
+.btn-up {
+    margin-top: 30px;
+}
+
+.btn-primary:visited {
+    color: white;
+}
+
+.ch-btn {
+    padding: 10px 50px;
+    
+}
