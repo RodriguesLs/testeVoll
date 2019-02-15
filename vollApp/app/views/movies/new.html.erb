@@ -1,5 +1,119 @@
-<h1>New Movie</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', movies_path %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Edit</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Felipe Zoldyck">
+        <style>
+            .c-body {
+            }
+            
+            .c-h1 {
+                text-align: center;
+                text-shadow: 10px 10px 10px #aaa;
+                font-size: 34px;
+                color: red;
+                font-weight: bold;
+            }
+            
+            .container {
+                margin: 0;
+                padding: 0;
+                display: block;
+                width: 500px;
+                height: 400px;
+                border: 2px solid red;
+                border-radius: 15px;
+                position: fixed;
+                right: 30%;
+                background-color: #49d9f9;
+            }
+            
+            .img-tag {
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
+            .img-tag input[type="file"]{
+                margin-top: 5%;
+                padding-left: 30%;
+            }
+            
+            
+            
+            .field {
+                text-align: center;
+                position: relative;
+                color: white;
+            }
+            
+            .field:nth-child(1) {
+                margin-top: 20px;
+            }
+            
+            .field input[type="text"] {
+                
+                display: block;
+                position: relative;
+                width: 80%;
+                margin: auto;
+                color: black;
+                height: 50%;
+            }
+            
+            .field a {
+                width: 100%;
+                display: block;
+                color: white;
+            }
+            
+            .field a:hover {
+                color: yellow;
+            }
+            
+            .actions {
+                text-align: center;
+            }
+       
+        </style>
+    </head>
+    <body class="c-body">
+        <h1 class="c-h1">New Movie</h1>
+        <%= form_for(@movie) do |f| %>
+          <% if @movie.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+              <ul>
+              <% @movie.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <div class="container">
+              <div class="field">
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+              </div>
+              <div class="field">
+                <%= f.label :description%>
+                <%= f.text_field :description%>
+              </div>
+              <div class="field">
+                <%= f.label :url%>
+                <%= f.text_field :url %>
+              </div>
+              
+              <div class="img-tag" >
+                <%= image_tag @movie.picture(:medium), class: "img-thumbnail"%>
+                <%= f.file_field :picture%>
+              </div>
+              
+              <div class="actions">
+                <%= f.submit class: "btn btn-primary"%>
+                <%= link_to 'Back', movies_path, class: "btn btn-primary" %>
+              </div>
+        </div>
+        <% end %>
+    </body> 
+</html>

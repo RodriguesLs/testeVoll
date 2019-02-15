@@ -1,21 +1,57 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show Movie</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Felipe Zoldyck">
+    <meta href="style.css" rel="stylesheet">
+  </head>
+<body>
+    <h1>Show Movie</h1>    
+    
+    <div class="row">
+        <%= form_for(@movie) do |f| %>
+      <% if @movie.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+    
+          <ul>
+          <% @movie.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+    <div class="col-2">
+      <div class="field cover" >
+        <%= image_tag @movie.picture(:medium), class: "img-thumbnail"%>
+        <%= f.file_field :picture, class:"ch-btn"%>
+      </div>
+    </div>
+    
+    <div class="col-2">
+      <div class="field">
+        <%= f.label @movie.name, class:"field-title" %>
+      </div>
+      <div class="field field-desc">
+        <%= f.label :description, class:"lbl"%>
+        <%= f.text_field :description, disabled: true %>
+      </div>
+      <div class="field field-desc">
+        <%= f.label :url, class: "lbl"%>
+        <p>
+          <%= link_to @movie.url %>
+        </p>
+      </div>
+      
+    </div>
+  <% end %>
+        <div class="ex-btn">
+          <%= link_to 'Edit', edit_movie_path(@movie) , class: "btn btn-primary"%>
+            
+            <%= link_to 'Back', movies_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+</body>
 
-<p>
-  <strong>Name:</strong>
-  <%= @movie.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @movie.url %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>

@@ -2,7 +2,6 @@
       <% if @movie.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
-    
           <ul>
           <% @movie.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -24,7 +23,7 @@
       </div>
       <div class="field field-desc">
         <%= f.label :description, class:"lbl"%>
-        <%= f.text_field :description %>
+        <%= f.text_field :description, autofocus: true %>
       </div>
       <div class="field field-desc">
         <%= f.label :url, class: "lbl"%>
@@ -32,9 +31,10 @@
           <%= link_to @movie.url %>
         </p>
       </div>
-      
-      <div>
-        <%= f.submit class: "btn btn-primary btn-up"%>
-      </div>
+    <div class="btn-up">
+      <%= f.submit class: "btn btn-primary"%>
     </div>
-  <% end %>
+
+    </div>
+    <% end %>
+    
