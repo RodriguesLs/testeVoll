@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+@media screen and (min-width: 400px) {
+    body {
+        background-color: black;    
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 .h1-list {
     text-align: center;
     background-color: #eee;
@@ -22,12 +34,11 @@
 .main-container {
     border: 2px solid black;
     border-radius: 30px 0 30px 0;
-    width: 95%;
-    height: 30%;
+    width: 600px;
+    height: 280px;
     margin: 1em auto;
     box-sizing: border-box;
     position: relative;
-    overflow: auto;
     box-shadow: 2px 2px 2px black;
 }
 
@@ -39,32 +50,35 @@
 }
 
 .main-desc {
-    padding: 30px 0;
+    padding: 15px;
+    white-space: normal;
+    display: block;
 }
 
 .main-desc h4 {
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     display: inline-block;
-    margin: 0;
+    margin: 0 0 0 5px;
     background-color: #eee;
     padding: 5px;
     border-radius: 15px 0 15px 0;
 }
 
-
 .card-h3 {
+    width: 100%;
     text-align: center;
     margin: 0;
     padding: 10px;
     background-color: #ddd;
     border-bottom: 1px solid #aaa;
+    box-sizing: border-box;
 }
 
 .img-thumbnail {
     display: inline-block;
-    margin-top: 40px;
+    margin-top: 30px;
     padding-left: 20px;
 }
 
@@ -94,7 +108,6 @@
     
 }
 
-
 .t-content tr:nth-child(2n) {
     background-color: #ddd;
 }
@@ -104,8 +117,6 @@
     left: 30%;
     top: 20%;
 }
-
-
 
 .t-content td:nth-child(2) {
     display: inline-block;
@@ -132,19 +143,28 @@
 // grid
 
 .row {
-    overflow: auto;
+    // clear: left;
+    overflow: hidden;
 }
 
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+} 
+
 .col-3 {
-    width: 33%;
+    margin-top: 5px;
+    width: 32%;
+    height: 220px;
     float: left;
-    height: 20%;
+    box-sizing: border-box;
+    margin-right: 1%;
+    position: relative;
 }
 
 .col-3-3 {
-    margin-top: 5%;
     text-align: right;
-    
 }
 
 .col-3-btn{
@@ -153,8 +173,6 @@
     border-radius: 15px 0 0 15px;
     height: 30px;
     display: block;
-    padding-right: 20px;
-    padding-top: 5px;
 }
 
 .col-3 a{
@@ -169,7 +187,6 @@
 .col-3 a:visited{
     background-color: #ccc;
 }
-
 
 .button {
     height: 50px;
@@ -197,4 +214,11 @@
 }
 .button a:hover {
     color: #ddd;
+}
+
+.main-desc-p {
+    position: absolute;
+    margin: 0;
+    padding: 10px 18px 0 0;
+    line-height: 1.5;
 }

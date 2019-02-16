@@ -4,15 +4,20 @@
 
 <div class="container">
   <% @movies.each do |movie| %>
-    <div class="main-container row">
+    <div class="main-container row clearfix">
       <h3 class="card-h3"><%= movie.name %></h3>
+      
       <div class="col-3">
         <%= image_tag movie.picture(:thumb), class: "img-thumbnail"%>
       </div>
+      
+      
       <div class="main-desc col-3">
         Classificação: <h4><%= movie.category.name%></h4>
-        <p><%= movie.description%> </p>
+        <p class="main-desc-p"><%= truncate(movie.description, length: 140)%> </p>
       </div>
+      
+      
       <div class="col-3 col-3-3">
         <%= link_to 'Show', movie, class: "col-3-btn" %>
         <%= link_to 'Edit', edit_movie_path(movie), class: "col-3-btn" %>
